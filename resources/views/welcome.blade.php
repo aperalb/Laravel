@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Time Brings Roses
+                    Time Brings Roses <3
                 </div>
 
                 <div class="links">
