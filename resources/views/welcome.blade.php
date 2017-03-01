@@ -77,10 +77,50 @@
                 </div>
             @endif
 
-            <div class="content">
+
+                <?php
+                   $pacientes = array("Ana" => "11.00", "Deborah" => "12.00"
+                   ); ?>
+
+                    <table>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Hora</th>
+                        </tr>
+                        <?php
+                            foreach ($pacientes as $nombre=>$hora){
+                            ?>
+                        <tr>
+                            <td>
+                                <?php echo $nombre ?>
+                            </td>
+                            <td>
+                                <?php echo $hora ?>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                            ?>
+
+
+
+
+                    </table>
+
+                <div class="content">
+
+
+                <?php
+
+                for ($i=0; $i < 5; $i++){ ?>
+
                 <div class="title m-b-md">
-                    Time Brings Roses <3
+                        Laravel <span><?php echo $i==0 ? '': $i ?></span>
                 </div>
+
+                    <?php
+                    }
+                    ?>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
