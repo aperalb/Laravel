@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #0e1010;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #0e1010;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -77,50 +77,44 @@
                 </div>
             @endif
 
-
-                <?php
-                   $pacientes = array("Ana" => "11.00", "Deborah" => "12.00"
-                   ); ?>
-
                     <table>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Hora</th>
+                            <td>
+                                <p>
+                                    <hr><strong> <?php echo "Ana Pérez Albarrán" ?> </strong><hr/>
+                                    <br><?php echo "¿Qué saben las tripas de puños cerrados?" ?><br/>
+                                    <br><?php echo "Saben que las riegan los amargos tragos." ?> <br/>
+                                    <br><?php echo "Saben todo y más, de tenerse en pie "?> <br/>
+                                    <br><?php echo "en la soledad. "?> <br/>
+                                    <br><?php echo "Saben por qué está, siempre duro el pan."?> <br/>
+                                <p/>
+                            </td>
                         </tr>
-                        <?php
-                            foreach ($pacientes as $nombre=>$hora){
-                            ?>
+
                         <tr>
                             <td>
-                                <?php echo $nombre ?>
-                            </td>
-                            <td>
-                                <?php echo $hora ?>
+                                <p>
+                                    <hr><strong> <?php echo "Déborah Birro González" ?> </strong> <hr/>
+                                    <br><?php echo "Ponte el moño apretao' sirena y que se " ?><br/>
+                                    <br><?php echo "joda el viento, rompe las horquillas de" ?> <br/>
+                                    <br><?php echo "espuma, y dejame que te remache sonrisas de"?> <br/>
+                                    <br><?php echo "de hierro, de esas que disipan las brumas "?> <br/>
+                                    <br><?php echo "Sé que entre los mares, nos lloveran cristales" ?> <br/>
+                                <p/>
                             </td>
                         </tr>
-                        <?php
-                            }
-                            ?>
-
-
-
 
                     </table>
 
                 <div class="content">
 
 
-                <?php
-
-                for ($i=0; $i < 5; $i++){ ?>
-
                 <div class="title m-b-md">
-                        Laravel <span><?php echo $i==0 ? '': $i ?></span>
+                    <strong> DAMI-PD</strong>
+                    <br><img src = "imgs/icono_v1.png"><br/>
                 </div>
 
-                    <?php
-                    }
-                    ?>
+
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
@@ -129,6 +123,12 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                    <div>
+                        <br><br/>
+                        <br> ¿Quiénes somos?</br>
+                        <br><img src = "imgs/wwa.png"><br/>
+                    </div>
             </div>
         </div>
     </body>
