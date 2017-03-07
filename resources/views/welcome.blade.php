@@ -110,7 +110,7 @@
 
                 <td >
                     <br><br><br><br><br>
-                    <p style="text-align: justify">
+                    <p style="text-align:justify">
                     <hr><strong> <?php echo "Ana Pérez Albarrán" ?> </strong><hr>
                     <br><?php echo "Estudiante de tercer curso de Ingeniería  " ?><br>
                     <br><?php echo "de la salud en la Universidad de Sevilla." ?> <br/>
@@ -154,4 +154,3 @@
     </div>
 </div>
 </body>
-</html>
