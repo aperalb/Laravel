@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DAMI-PD!!</title>
+    <title>DAMI-PD</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -94,51 +94,51 @@
 
 
 
-            <table class="top-center">
+        <table class="top-center">
 
 
-                <tr>
-                    <td class="small-title">
-                        <br><b> ¿Quiénes somos?</b><br>
-                    </td>
+            <tr>
+                <td class="small-title">
+                    <br><b> ¿Quiénes somos?</b><br>
+                </td>
 
-                </tr>
-            </table>
+            </tr>
+        </table>
 
         <table class="top-right">
-                <tr>
+            <tr>
 
-                    <td >
-                        <br><br><br><br><br>
-                        <p style="text-align: justify">
-                        <hr><strong> <?php echo "Ana Pérez Albarrán" ?> </strong><hr>
-                        <br><?php echo "Estudiante de tercer curso de Ingeniería  " ?><br>
-                        <br><?php echo "de la salud en la Universidad de Sevilla." ?> <br/>
-                        <br><?php echo "Creativa, emprendedora y amante del Rock español."?> <br>
-                        <br><?php echo "E-mail de contacto: "?><a href="mailto:aperalb@gmail.com"><?php echo "aperalb@gmail.com"?></a> <br>
-                        </p>
-                    </td>
+                <td >
+                    <br><br><br><br><br>
+                    <p style="text-align: justify">
+                    <hr><strong> <?php echo "Ana Pérez Albarrán" ?> </strong><hr>
+                    <br><?php echo "Estudiante de tercer curso de Ingeniería  " ?><br>
+                    <br><?php echo "de la salud en la Universidad de Sevilla." ?> <br/>
+                    <br><?php echo "Creativa, emprendedora y amante del Rock español."?> <br>
+                    <br><?php echo "E-mail de contacto: "?><a href="mailto:aperalb@gmail.com"><?php echo "aperalb@gmail.com"?></a> <br>
+                    </p>
+                </td>
 
 
 
-                    <td>
-                        <br><br><br><br><br>
-                        <p style="text-align: justify">
-                        <hr><strong> <?php echo "Déborah Birro González" ?> </strong> <hr>
-                        <br><?php echo "Estudiante de tercer curso de Ingeniería  " ?><br>
-                        <br><?php echo "de la salud en la Universidad de Sevilla." ?> <br/>
-                        <br><?php echo "Enérgica, alegre y una geek de la cultura japonesa."?> <br>
-                        <br><?php echo "E-mail de contacto: "?><a href="mailto:deborah_birro@hotmail.com"><?php echo "deborah_birro@hotmail.com"?></a> <br>
-                        </p>
-                    </td>
-                </tr>
+                <td>
+                    <br><br><br><br><br>
+                    <p style="text-align: justify">
+                    <hr><strong> <?php echo "Déborah Birro González" ?> </strong> <hr>
+                    <br><?php echo "Estudiante de tercer curso de Ingeniería  " ?><br>
+                    <br><?php echo "de la salud en la Universidad de Sevilla." ?> <br/>
+                    <br><?php echo "Enérgica, alegre y una geek de la cultura japonesa."?> <br>
+                    <br><?php echo "E-mail de contacto: "?><a href="mailto:deborah_birro@hotmail.com"><?php echo "deborah_birro@hotmail.com"?></a> <br>
+                    </p>
+                </td>
+            </tr>
 
-                <div class="bottom-center">
-                    <img src="imgs/another.png">
+            <div class="bottom-center">
+                <img src="imgs/another.png">
                 <div>
 
 
-            </table>
+        </table>
 
 
         <div class="links">
