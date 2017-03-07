@@ -14,7 +14,7 @@
     <!-- Styles -->
     <style>
         html, body {
-            background-color: #fff;
+            background-image: url("imgs/fondo.jpeg");
             color: #0e1010;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
@@ -32,12 +32,11 @@
             position: relative;
         }
         .top-right {
-            position: absolute;
-            right: 50px;
-            top: 18px;
+            position: relative;
+            top: 0px;
         }
         .top-center{
-            position: absolute;
+            position: relative;
             top: 0;
             left: 60%;
         }
@@ -48,14 +47,16 @@
         }
         .content {
             text-align: center;
+
         }
         .title {
             font-size: 84px;
-            position: inherit;
+            margin-left: 35%;
         }
         .small-title{
             font-size: 35px;
-            top: 0;
+            margin-top: 0;
+
         };
         .links > a {
             color: #0e1010;
@@ -72,73 +73,83 @@
     </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
-
-
-    <div class="content" >
-
-
-        <div class=title>
-            <strong> DAMI-PD</strong>
-            <br><img src = "imgs/icono_v1.png"><br>
-        </div>
-
-
-
-        <table class="top-center">
-
-
-            <tr>
-                <td class="small-title">
-                    <br><b> ¿Quiénes somos?</b><br>
-                </td>
-
-            </tr>
-        </table>
-
-        <table class="top-right">
-            <tr>
-
-                <td >
-                    <br><br><br><br><br>
-                    <p style="text-align: justify">
-                    <hr><strong> Ana Pérez Albarrán </strong><hr>
-                    <br>Estudiante de tercer curso de Ingeniería  <br>
-                    <br>de la salud en la Universidad de Sevilla. <br/>
-                    <br>Creativa, emprendedora y amante del Rock español. <br>
-                    <br>E-mail de contacto: <a href="mailto:aperalb@gmail.com">aperalb@gmail.com</a> <br>
-                    </p>
-                </td>
-
-
-
-                <td>
-                    <br><br><br><br><br>
-                    <p style="text-align: justify">
-                    <hr><strong> Déborah Birro González </strong> <hr>
-                    <br>Estudiante de tercer curso de Ingeniería  <br>
-                    <br>de la salud en la Universidad de Sevilla. <br/>
-                    <br>Enérgica, alegre y una geek de la cultura japonesa. <br>
-                    <br>E-mail de contacto: <a href="mailto:deborah_birro@hotmail.com">deborah_birro@hotmail.com</a> <br>
-                    </p>
-                </td>
-            </tr>
-
-            <div class="bottom-center">
-                <img src="imgs/another.png">
-                <div>
-
-
-        </table>
-
-
-        <div class="links">
-
-            <a href="https://www.google.es/?gws_rd=ssl">Objetivos</a>
-        </div>
-
-
-    </div>
+<div class="title">
+    <table class="content">
+    <strong> DAMI-PD</strong>
+    <img src = "imgs/icono_v2.png"><br>
+    </table>
 </div>
+
+<div class="content">
+    <table style="display: inline-table">
+        <tr>
+            <td class="small-title" width="500" scope="col">
+                <b>Objetivos</b>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <p style="text-align: justify">
+                    <strong>DAMI-PD es una herramienta online de uso sanitario para la <br></strong>
+                    <br><strong>gestión del proceso valorativo con carácter prequirúrgico <br></strong>
+                    <br><strong>de enfermos de Parkinson. Almacena, procesa y gestiona los <br></strong>
+                    <br><strong>formularios resultantes de los protocolos aplicados de manera<br></strong>
+                    <br><strong>personalizada a los pacientes, manteniendo el histórico.<br></strong>
+                    <br><strong>La prioridad de DAMI-PD es mejorar la eficiencia de la atención <br></strong>
+                    <br><strong>sanitaria, facilitar la gestión de manera fiable y confidencial.<br><br></strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="imgs/another.png">
+            </td>
+        </tr>
+    </table>
+    <table style="display: inline-table">
+        <tr>
+            <td class="small-title" style="text-align: center" width="500">
+                <br><b> ¿Quiénes somos?</b><br>
+            </td>
+        </tr>
+        <tr>
+            <td width="500">
+                <br>
+                <p style="text-align: justify">
+                <hr><strong><big>Ana Pérez Albarrán </big></strong> <hr>
+                <br><b>Estudiante de Ingeniería de la Salud<br>
+                <br>en la Universidad de Sevilla. Creativa, emprendedora<br/>
+                <br>amante del codigo libre y amante del Rock español.<br>
+                <br>E-mail de contacto: <a href="mailto:aperalb@gmail.com">aperalb@gmail.com</a>
+                </b>
+                </p>
+            </td>
+        </tr>
+        <tr>
+
+
+            <td width="500">
+                <br>
+                <p style="text-align: justify">
+                <hr><strong><big>Déborah Birro González</big></strong> <hr>
+                <br><b>Estudiante de Ingeniería de la Salud<br>
+                <br>en la Universidad de Sevilla. Enérgica, alegre,<br/>
+                <br>amante de los libros y una geek de la cultura japonesa.<br>
+                <br>E-mail de contacto: <a href="mailto:deborah_birro@hotmail.com">deborah_birro@hotmail.com</a>
+                </b>
+                </p>
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+<footer>
+    <p style="text-align: end"><b>Escuela Técnica Superior de Ingeniería Informática</b></p>
+</footer>
+
 </body>
 </html>
