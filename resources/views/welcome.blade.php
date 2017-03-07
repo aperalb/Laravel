@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,16 +73,6 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @if (Auth::check())
-                <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ url('/login') }}">Login</a>
-                <a href="{{ url('/register') }}">Register</a>
-            @endif
-        </div>
-    @endif
 
 
     <div class="content" >
@@ -110,12 +101,12 @@
 
                 <td >
                     <br><br><br><br><br>
-                    <p style="text-align:justify">
-                    <hr><strong> <?php echo "Ana Pérez Albarrán" ?> </strong><hr>
-                    <br><?php echo "Estudiante de tercer curso de Ingeniería  " ?><br>
-                    <br><?php echo "de la salud en la Universidad de Sevilla." ?> <br/>
-                    <br><?php echo "Creativa, emprendedora y amante del Rock español."?> <br>
-                    <br><?php echo "E-mail de contacto: "?><a href="mailto:aperalb@gmail.com"><?php echo "aperalb@gmail.com"?></a> <br>
+                    <p style="text-align: justify">
+                    <hr><strong> Ana Pérez Albarrán </strong><hr>
+                    <br>Estudiante de tercer curso de Ingeniería  <br>
+                    <br>de la salud en la Universidad de Sevilla. <br/>
+                    <br>Creativa, emprendedora y amante del Rock español. <br>
+                    <br>E-mail de contacto: <a href="mailto:aperalb@gmail.com">aperalb@gmail.com</a> <br>
                     </p>
                 </td>
 
@@ -124,11 +115,11 @@
                 <td>
                     <br><br><br><br><br>
                     <p style="text-align: justify">
-                    <hr><strong> <?php echo "Déborah Birro González" ?> </strong> <hr>
-                    <br><?php echo "Estudiante de tercer curso de Ingeniería  " ?><br>
-                    <br><?php echo "de la salud en la Universidad de Sevilla." ?> <br/>
-                    <br><?php echo "Enérgica, alegre y una geek de la cultura japonesa."?> <br>
-                    <br><?php echo "E-mail de contacto: "?><a href="mailto:deborah_birro@hotmail.com"><?php echo "deborah_birro@hotmail.com"?></a> <br>
+                    <hr><strong> Déborah Birro González </strong> <hr>
+                    <br>Estudiante de tercer curso de Ingeniería  <br>
+                    <br>de la salud en la Universidad de Sevilla. <br/>
+                    <br>Enérgica, alegre y una geek de la cultura japonesa. <br>
+                    <br>E-mail de contacto: <a href="mailto:deborah_birro@hotmail.com">deborah_birro@hotmail.com</a> <br>
                     </p>
                 </td>
             </tr>
@@ -142,11 +133,7 @@
 
 
         <div class="links">
-            {{--<a href="https://laravel.com/docs">Documentation</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>--}}
+
             <a href="https://www.google.es/?gws_rd=ssl">Objetivos</a>
         </div>
 
@@ -154,3 +141,4 @@
     </div>
 </div>
 </body>
+</html>
