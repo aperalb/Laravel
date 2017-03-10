@@ -56,6 +56,7 @@
         .small-title{
             font-size: 35px;
             margin-top: 0;
+            margin-left: 40%;
 
         };
         .links > a {
@@ -75,36 +76,59 @@
 <body>
 <div class="title">
     <table class="content">
-    <strong> DAMI-PD</strong>
-    <img src = "imgs/icono_v2.png"><br>
+        <strong> DAMI-PD</strong>
+        <img src = "imgs/icono_v2.png"><br>
+    </table>
+</div>
+
+<div class="small-title">
+    <table class="content">
+        <br><b>¿Quiénes somos?</b></br>
     </table>
 </div>
 
 <div class="content">
+
     <table style="display: inline-table">
+
         <tr>
-            <td class="small-title">
+            <td width="500">
                 <br>
-                <b>Objetivos</b>
-
+                <p style="text-align: justify">
+                <hr><strong><big>Ana Pérez Albarrán </big></strong> <hr>
+                <br><b>Estudiante de Ingeniería de la Salud<br>
+                    <br>en la Universidad de Sevilla. Creativa, emprendedora<br/>
+                    <br>amante del codigo libre y amante del Rock español.<br>
+                    <br>E-mail de contacto: <a href="mailto:aperalb@gmail.com">aperalb@gmail.com</a>
+                </b>
+                </p>
             </td>
-        </tr>
-        <tr>
-            <td>
 
-                <p style="text-align: justify; margin-left: 250px; margin-right: 250px; line-height: 200%">
-                    <br>
-                    <strong>DAMI-PD es una herramienta online de uso sanitario para lagestión del proceso valorativo con carácter prequirúrgico de
-                        enfermos de Parkinson. Almacena, procesa y gestiona los formularios resultantes de los protocolos aplicados de manera
-                        personalizada a los pacientes, manteniendo el histórico. La prioridad de DAMI-PD es mejorar la eficiencia de la atención
-                        sanitaria, facilitar la gestión de manera fiable y confidencial.<br></strong>
+
+            <td width="500">
+                <br>
+                <p style="text-align: justify">
+                <hr><strong><big>Déborah Birro González</big></strong> <hr>
+                <br><b>Estudiante de Ingeniería de la Salud<br>
+                    <br>en la Universidad de Sevilla. Enérgica, alegre,<br/>
+                    <br>amante de los libros y una geek de la cultura japonesa.<br>
+                    <br>E-mail de contacto: <a href="mailto:deborah_birro@hotmail.com">deborah_birro@hotmail.com</a>
+                </b>
                 </p>
             </td>
         </tr>
 
     </table>
-    <div class="small-title">
-        <br><b><a href={{url('/about')}}>¿Quiénes somos?</a></b></br>
+    <div class="content">
+        <table>
+            <img src="imgs/guapas.png">
+        </table>
+    </div>
+    <div class="links">
+        <br>
+        <a href={{url('/')}}><b><big><big>Volver a Inicio</big></big></b></a>
+        <br><br>
+
     </div>
 
 </div>

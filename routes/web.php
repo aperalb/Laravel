@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('objectives.blade.php', function(){
-
-//})
+//
+Route::get('about', function(){
+    return view ('about');
+})
 
 ?>
