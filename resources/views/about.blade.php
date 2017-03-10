@@ -121,7 +121,7 @@
     </table>
     <div class="content">
         <table>
-            <img src="imgs/guapas.png">
+            <img src="imgs/sitar_opt.jpg">
         </table>
     </div>
     <div class="links">
