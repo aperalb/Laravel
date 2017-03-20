@@ -57,7 +57,7 @@
             font-size: 35px;
             margin-top: 0;
 
-        };
+        }
         .links > a {
             color: #0e1010;
             padding: 0 25px;
@@ -94,7 +94,7 @@
 
                 <p style="text-align: justify; margin-left: 250px; margin-right: 250px; line-height: 200%">
                     <br>
-                    <strong>DAMI-PD es una herramienta online de uso sanitario para lagestión del proceso valorativo con carácter prequirúrgico de
+                    <strong>DAMI-PD es una herramienta online de uso sanitario para la gestión del proceso valorativo con carácter prequirúrgico de
                         enfermos de Parkinson. Almacena, procesa y gestiona los formularios resultantes de los protocolos aplicados de manera
                         personalizada a los pacientes, manteniendo el histórico. La prioridad de DAMI-PD es mejorar la eficiencia de la atención
                         sanitaria, facilitar la gestión de manera fiable y confidencial.<br></strong>

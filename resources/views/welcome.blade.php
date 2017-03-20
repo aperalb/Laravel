@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DAMI-PD</title>
+    <title>Dami-PD</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -27,39 +26,31 @@
         .flex-center {
             align-items: center;
             display: flex;
+            justify-content: center;
         }
         .position-ref {
             position: relative;
         }
         .top-right {
-            position: relative;
-            top: 0px;
-        }
-        .top-center{
-            position: relative;
-            top: 0;
-            left: 60%;
-        }
-        .bottom-center{
             position: absolute;
-            bottom: 10px;
-            left: 55%;
+            right: 10px;
+            top: 18px;
         }
         .content {
             text-align: center;
-
         }
         .title {
             font-size: 84px;
             margin-left: 35%;
         }
         .small-title{
-            font-size: 35px;
+            font-size: 45px;
             margin-top: 0;
+            margin-left: 21%;
 
-        };
+        }
         .links > a {
-            color: #0e1010;
+            color: #636b6f;
             padding: 0 25px;
             font-size: 12px;
             font-weight: 600;
@@ -73,28 +64,32 @@
     </style>
 </head>
 <body>
+
 <div class="title">
-    <table class="content">
-        <strong> DAMI-PD</strong>
-        <img src = "imgs/icono_v2.png"><br>
-    </table>
-</div>
-
-<div class="content">
-    <table style="display: inline-table">
+    <table>
         <tr>
-            <td class="small-title">
-                <br>
-                <b><a href={{url('/objectives')}}> Objetivos</a></b>
-
-            </td>
+            <br>
+            <strong> DAMI-PD</strong>
+            <img src = "imgs/icono_v1.png">
         </tr>
-
     </table>
-    <div class="small-title">
-        <br><b><a href={{url('/about')}}>¿Quiénes somos?</a></b></br>
-    </div>
-
 </div>
+
+<div class="position-ref">
+    <div class="content links">
+        <br><br>
+        <hr width="700">
+        <a href={{url('/home')}}><big><strong>Iniciar Sesión</strong></big></a>
+        <a href={{url('/objectives')}}><big><strong>Objetivos de Dami-PD</strong></big></a>
+        <a href={{url('/about')}}><big><strong>Sobre nosotras</strong></big></a>
+        <hr width="700">
+    </div>
+</div>
+
+<div class="small-title">
+    <br>
+    <i><b><font color="#80AFE5" >Unified Parkinson's Disease Rating Scale</font></b></i>
+</div>
+
 </body>
 </html>

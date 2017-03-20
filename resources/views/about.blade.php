@@ -58,9 +58,9 @@
             margin-top: 0;
             margin-left: 40%;
 
-        };
+        }
         .links > a {
-            color: #0e1010;
+            color: #636b6f;
             padding: 0 25px;
             font-size: 12px;
             font-weight: 600;
@@ -121,7 +121,7 @@
     </table>
     <div class="content">
         <table>
-            <img src="imgs/sitar_opt.jpg">
+            <img src="imgs/supuesta_definitiva.jpg">
         </table>
     </div>
     <div class="links">
