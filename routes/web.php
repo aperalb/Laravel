@@ -20,6 +20,10 @@ Route::get('about', function(){
     return view ('about');
 });
 
+Route::get('objectives', function(){
+    return view ('objectives');
+});
+
 
 Auth::routes();
 

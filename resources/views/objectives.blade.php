@@ -75,8 +75,8 @@
 <body>
 <div class="title">
     <table class="content">
-        <strong> DAMI-PD</strong>
-        <img src = "imgs/icono_v2.png"><br>
+    <strong> DAMI-PD</strong>
+    <img src = "imgs/icono_v2.png"><br>
     </table>
 </div>
 
@@ -85,14 +85,26 @@
         <tr>
             <td class="small-title">
                 <br>
-                <b><a href={{url('/objectives')}}> Objetivos</a></b>
+                <b>Objetivos</b>
 
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <p style="text-align: justify; margin-left: 250px; margin-right: 250px; line-height: 200%">
+                    <br>
+                    <strong>DAMI-PD es una herramienta online de uso sanitario para lagestión del proceso valorativo con carácter prequirúrgico de
+                        enfermos de Parkinson. Almacena, procesa y gestiona los formularios resultantes de los protocolos aplicados de manera
+                        personalizada a los pacientes, manteniendo el histórico. La prioridad de DAMI-PD es mejorar la eficiencia de la atención
+                        sanitaria, facilitar la gestión de manera fiable y confidencial.<br></strong>
+                </p>
             </td>
         </tr>
 
     </table>
     <div class="small-title">
-        <br><b><a href={{url('/about')}}>¿Quiénes somos?</a></b></br>
+        <br><b><a href={{url('/')}}>Inicio</a></b></br>
     </div>
 
 </div>
