@@ -12,6 +12,16 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <style>
+    html, body {
+    background-image: url("imgs/fondo.jpeg");
+    color: #0e1010;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+    }
+    </style>
 
     <!-- Scripts -->
     <script>
@@ -36,7 +46,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Dami-PD') }}
                     </a>
                 </div>
 

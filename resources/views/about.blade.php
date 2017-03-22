@@ -98,7 +98,7 @@
                 <hr><strong><big>Ana Pérez Albarrán </big></strong> <hr>
                 <br><b>Estudiante de Ingeniería de la Salud<br>
                     <br>en la Universidad de Sevilla. Creativa, emprendedora<br/>
-                    <br>amante del codigo libre y amante del Rock español.<br>
+                    <br>amante del código libre y amante del Rock español.<br>
                     <br>E-mail de contacto: <a href="mailto:aperalb@gmail.com">aperalb@gmail.com</a>
                 </b>
                 </p>
