@@ -12,16 +12,6 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <style>
-    html, body {
-    background-image: url("imgs/fondo.jpeg");
-    color: #0e1010;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-    height: 100vh;
-    margin: 0;
-    }
-    </style>
 
     <!-- Scripts -->
     <script>
