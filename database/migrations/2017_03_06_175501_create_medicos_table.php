@@ -13,10 +13,20 @@ class CreateMedicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('medicos', function (Blueprint $table) {
+        Schema::create('medicos', function(Blueprint $table)
+        {
             $table->increments('id');
             $table->timestamps();
-        });
+            $table->string('nombre');
+            $table->string('apellidos');
+            $table->string('especialidad')->default('Neurologo');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+
+
+        }
+        );
     }
 
     /**

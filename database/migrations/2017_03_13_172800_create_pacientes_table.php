@@ -20,10 +20,14 @@ class CreatePacientesTable extends Migration
             $table->string('apellidos');
             $table->string('dni');
             $table->string('nuhsa');
-            $table->bigInteger('num_telefono');
-            $table->string('direccion');
-
-        });
+            $table->date('fechaNac');
+            $table->unsignedInteger('fechaInicioPD');
+            $table->string('sintomasMotores');
+            $table->string('sintomasCognitivos');
+            $table->string('observaciones');
+            $table->unsignedInteger('medico_id');
+            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');        }
+        );
     }
 
     /**

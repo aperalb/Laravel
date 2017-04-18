@@ -24,9 +24,16 @@ Route::get('objectives', function(){
     return view ('objectives');
 });
 
+//
+Route::get('administrador', function(){
+    return view ('auth/register_administrador');
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
 ?>
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
