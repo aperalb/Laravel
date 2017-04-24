@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Medico;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -62,11 +63,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   //evaluar data de entrada para determinar tipo de usuario
-        $user=User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+dd($data);
+
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+
+        if (isset($data['especialidad'])) {
+            $medico = new Medico();
+            $medico->especialidad=$data['especialidad'];
+            $medico->user_id = $user->id; // User user = new User(); user.setUserId(1);
+            $medico->save();
+        }
+        else{
+
+        }
 
         return $user;
     }
