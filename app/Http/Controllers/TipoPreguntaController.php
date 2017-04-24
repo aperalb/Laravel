@@ -6,5 +6,15 @@ use Illuminate\Http\Request;
 
 class TipoPreguntaController extends Controller
 {
-    //HOLA
+    public function index()
+    {
+        //
+
+
+        $tipopregunta = Especialidad::all();
+
+        return view('especialidades/index')->with('especialidades', $especialidades);
+
+
+    }
 }
