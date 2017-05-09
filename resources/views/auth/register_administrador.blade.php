@@ -24,12 +24,45 @@
                                 </div>
                             </div>
 
-
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="prueba" class="col-md-4 control-label">Prueba</label>
+                            <div class="form-group{{ $errors->has('apellido') ? ' has-error' : '' }}">
+                                <label for="apellido" class="col-md-4 control-label">Apellido</label>
 
                                 <div class="col-md-6">
-                                    <input id="prueba" type="text" class="form-control" prueba="prueba" value="{{ old('prueba') }}" required autofocus>
+                                    <input id="apellido" type="text" class="form-control" name="apellido" value="{{ old('apellido') }}" required >
+
+                                    @if ($errors->has('apellido'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('apellido') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('dni') ? ' has-error' : '' }}">
+                                <label for="dni" class="col-md-4 control-label">dni</label>
+
+                                <div class="col-md-6">
+                                    <input id="dni" type="text" class="form-control" name="dni" value="{{ old('dni') }}" required >
+
+                                    @if ($errors->has('dni'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('dni') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+
+                            <div class="form-group{{ $errors->has('salario') ? ' has-error' : '' }}">
+                                <label for="salario" class="col-md-4 control-label">salario</label>
+
+                                <div class="col-md-6">
+                                    <input id="salario" type="text" class="form-control" name="salario" value="{{ old('salario') }}" required >
+                                    @if ($errors->has('salario'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('salario') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 

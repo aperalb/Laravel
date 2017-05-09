@@ -27,7 +27,7 @@ Route::get('objectives', function(){
 //
 Route::get('administrador', function(){
     return view ('auth/register_administrador');
-});
+})->name('registraradministrador');
 
 Auth::routes();
 
@@ -39,5 +39,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('tipopregunta', 'TipoPreguntaController');
+
+Route::resource('medico', 'MedicoController');
+
+Route::resource('paciente', 'PacienteController');
+
 
 ?>

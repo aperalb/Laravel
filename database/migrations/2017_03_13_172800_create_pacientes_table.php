@@ -24,7 +24,9 @@ class CreatePacientesTable extends Migration
             $table->unsignedInteger('fechaInicioPD');
             $table->string('sintomasMotores');
             $table->string('sintomasCognitivos');
-            $table->string('observaciones');
+            $table->string('observaciones')-> nullable();
+            $table->string('grado');
+
             $table->unsignedInteger('medico_id');
             $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');        }
         );
