@@ -37,12 +37,6 @@
                             {!!Form::text('especialidad',null,['class'=>'form-control', 'required', ]) !!}
                         </div>
 
-                        <div class="form-group">
-                            {!!Form::label('codigo', 'Codigo Identificador') !!}
-                            <br>
-                            {!!Form::text('codigo',null,['class'=>'form-control', 'required', ]) !!}
-                        </div>
-
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

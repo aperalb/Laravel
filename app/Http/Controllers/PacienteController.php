@@ -13,8 +13,9 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        $paciente = Pacientes::all();
-        return view('paciente/index')->with('paciente', $paciente);
+        $pacientes = Paciente::all();
+
+        return view('paciente/index',['pacientes'=>$pacientes] );
 
         //
     }
@@ -134,5 +135,11 @@ class PacienteController extends Controller
         flash('Paciente borrado correctamente');
 
         return redirect()->route('paciente.index');
+    }
+
+    public function destroyAll(){
+
+        //
+
     }
 }

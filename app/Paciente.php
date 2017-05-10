@@ -14,8 +14,11 @@ class Paciente extends Model
 
 
     public function Medico(){
-        return $this -> belongsTo('App/Medico', 'medico_id');
+        return $this -> belongsTo('App/Medico');
     }
+
+
+
 
 
 }

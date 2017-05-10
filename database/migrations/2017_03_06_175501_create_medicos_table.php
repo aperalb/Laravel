@@ -17,16 +17,9 @@ class CreateMedicosTable extends Migration
         {
             $table->increments('id');
             $table->timestamps();
-            $table->string('name');         //
-            $table->string('apellido');     //
-            $table->string('email');        //
-            $table->string('dni');
             $table->string('especialidad')->default('Neurologo');
-            $table->unsignedInteger('codigo')->unique();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-
 
         }
         );

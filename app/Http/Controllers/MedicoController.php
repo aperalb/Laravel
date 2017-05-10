@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Medico;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class MedicoController extends Controller
     {
         $medicos = Medico::all();
 
-        return view('medico/index',['medicos'=>$medicos]);
+        return view('medico/index',['medicos'=>$medicos] );
     }
 
     /**
@@ -43,8 +44,7 @@ class MedicoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'especialidad'=>'required|max:255',
-            'codigo'=>'required|numeric',
+            'especialidad'=>'required|max:255'
         ]);
 
         $medico = new Medico($request->all());
@@ -78,7 +78,8 @@ class MedicoController extends Controller
     {
         $medico = Medico::find($id);
 
-        return view('medico/edit',['medico'=> $medico ]);
+
+        return view('medico/edit')->with('medico', $medico);
     }
 
     /**
@@ -90,7 +91,24 @@ class MedicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /**dd($request);*/
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'apellido' => 'required|max:255',
+            'especialidad' => 'required|max:255'
+        ]);
+
+        $medico = Medico::find($id);
+        $medico->fill($request->all());
+
+        /**$medico->user->name = $request->get('name');
+        $medico->user->apellido = $request->get('apellido');
+        $medico->user->especialidad = $request->get('especialidad');*/
+        $medico->save();
+
+        flash('Medico modificado correctamente');
+
+        return redirect()->route('medico.index');
     }
 
     /**
@@ -101,6 +119,11 @@ class MedicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $medico = Medico::find($id);
+        $medico->delete();
+        flash('Medico borrado correctamente');
+
+        return redirect()->route('medico.index');
+
     }
 }

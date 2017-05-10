@@ -8,11 +8,6 @@
                     <div class="panel-heading">Medicos</div>
 
                     <div class="panel-body">
-                        @include('flash::message')
-                        {!! Form::open(['route' => 'medico.create', 'method' => 'get']) !!}
-                        {!!   Form::submit('Crear medico', ['class'=> 'btn btn-primary'])!!}
-                        {!! Form::close() !!}
-
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
@@ -24,8 +19,8 @@
                             @foreach ($medicos as $medico)
 
                                 <tr>
-                                    <td>{{ $medico->nombre }}</td>
-                                    <td>{{ $medico->apellido }}</td>
+                                    <td>{{ $medico->user->name}}</td>
+                                    <td>{{ $medico->user->apellido }}</td>
                                     <td>{{ $medico->especialidad }}</td>
 
                                     <td>

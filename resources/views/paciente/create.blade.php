@@ -61,11 +61,7 @@
                             {!! Form::text('grado',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
-                        <div class="form-group">
-                            {!! Form::label('medico_id', 'Codigo del medico') !!}
-                            {!! Form::text('medico_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
-                            {!!  !!}
-                        </div>
+
 
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

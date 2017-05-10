@@ -27,9 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function medico(){
-        return $this->hasOne('App\Medico', 'user_id');
-    }
 
+    public function Medico(){
+        return $this->hasOne('App\Medico');
+    }
 
 }

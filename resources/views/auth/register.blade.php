@@ -11,7 +11,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Name</label>
+                                <label for="name" class="col-md-4 control-label">Nombre</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -51,21 +51,6 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="form-group{{ $errors->has('codigo') ? ' has-error' : '' }}">
-                                <label for="digoco" class="col-md-4 control-label">Codigo Médico</label>
-
-                                <div class="col-md-6">
-                                    <input id="codigo" type="numeric" class="form-control" name="codigo" value="{{ old('email') }}" required>
-
-                                    @if ($errors->has('codigo'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('codigo') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
 
                             <div class="form-group{{ $errors->has('especialidad') ? ' has-error' : '' }}">
                                 <label for="especialidad" class="col-md-4 control-label">especialidad</label>

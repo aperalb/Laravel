@@ -60,7 +60,6 @@ class RegisterController extends Controller
                 'dni' => 'required|min:9|max:9', // ver validacion
                 'password' => 'required|min:6|confirmed',
                 'especialidad' => 'required|max:255',
-                'codigo' => 'required|numeric',
             ]);
         }elseif(isset($data['salario']))
         {
@@ -84,7 +83,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   //evaluar data de entrada para determinar tipo de usuario
-            $user = User::create([
+
+
+
+        $user = User::create([
                 'name' => $data['name'],
                 'apellido' => $data['apellido'],
                 'email' => $data['email'],
@@ -94,12 +96,7 @@ class RegisterController extends Controller
 
         if (isset($data['especialidad'])) {
             $medico = new Medico();
-            $medico->nombre=$data['name'];
-            $medico->apellido = $data['apellido'];
-            $medico->dni = $data['dni'];
-            $medico->email = $data['email'];
             $medico->especialidad=$data['especialidad'];
-            $medico->codigo=$data['codigo'];
             $medico->user_id = $user->id; // User user = new User(); user.setUserId(1);
             $medico->save();
         }
