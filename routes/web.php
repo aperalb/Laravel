@@ -38,7 +38,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('tipopregunta', 'TipoPreguntaController');
+Route::resource('/tipopregunta', 'TipoPreguntaController');
 
 Route::resource('medico', 'MedicoController');
 
