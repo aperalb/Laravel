@@ -22,8 +22,8 @@ class CreatePacientesTable extends Migration
             $table->string('nuhsa');
             $table->date('fechaNac');
             $table->unsignedInteger('fechaInicioPD');
-            $table->string('sintomasMotores');
-            $table->string('sintomasCognitivos');
+            $table->string('sintomasMotores')->nullable;
+            $table->string('sintomasCognitivos')->nullable;
             $table->string('observaciones')-> nullable();
             $table->string('grado');
 

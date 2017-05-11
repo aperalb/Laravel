@@ -16,6 +16,10 @@ class CreateModeloFormulariosTable extends Migration
         Schema::create('modelo_formularios', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('nombre');
+            $table->unsignedInteger('medico_id');
+            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
+
         });
     }
 

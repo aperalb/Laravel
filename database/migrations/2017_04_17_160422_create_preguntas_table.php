@@ -16,7 +16,10 @@ class CreatePreguntasTable extends Migration
         Schema::create('preguntas', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->String('tipo');
+            $table->string('enunciado');
+
+            $table->unsignedInteger('modelo_id');
+            $table->foreign('modelo_id')->references('id')->on('modelo formularios')->onDelete('cascade');
 
         });
     }

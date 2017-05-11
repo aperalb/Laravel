@@ -16,6 +16,13 @@ class CreateTratamientosTable extends Migration
         Schema::create('tratamientos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('finalidad');
+            $table->string('medicamento');
+            $table->string('posologia');
+
+            $table->unsignedInteger('paciente_id');
+            $table->foreign('paciente_id')->reference('id')->on('pacientes')->onDelete('cascade');
+
         });
     }
 

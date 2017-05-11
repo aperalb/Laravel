@@ -16,6 +16,16 @@ class CreateUpdrsTable extends Migration
         Schema::create('updrs', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->boolean('estado');
+            $table->float('dosis_supramaxima');
+            $table->integer('talla');
+            $table->float('peso');
+            $table->boolean('donante');
+            $table->float('tension_arterial');
+            $table->unsignedInteger('modelo_id');
+            $table->foreign('modelo_id')->references('id')->on('modelo formularios')->onDelete('cascade');
+
+
         });
     }
 
