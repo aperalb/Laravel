@@ -16,6 +16,9 @@ class Medico extends Model
         return $this -> hasMany('App\Paciente');
     }
 
-
+    public function getFullnameAttribute()
+    {
+        return $this->user->name . ' ' . $this->user->apellido;
+    }
 
 }

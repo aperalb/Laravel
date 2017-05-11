@@ -22,8 +22,8 @@ class CreateUpdrsTable extends Migration
             $table->float('peso');
             $table->boolean('donante');
             $table->float('tension_arterial');
-            $table->unsignedInteger('modelo_id');
-            $table->foreign('modelo_id')->references('id')->on('modelo formularios')->onDelete('cascade');
+            $table->unsignedInteger('formulario_id');
+            $table->foreign('formulario_id')->references('id')->on('formularios')->onDelete('cascade');
 
 
         });

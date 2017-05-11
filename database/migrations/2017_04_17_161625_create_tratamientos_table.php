@@ -21,7 +21,7 @@ class CreateTratamientosTable extends Migration
             $table->string('posologia');
 
             $table->unsignedInteger('paciente_id');
-            $table->foreign('paciente_id')->reference('id')->on('pacientes')->onDelete('cascade');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
 
         });
     }

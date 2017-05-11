@@ -16,10 +16,10 @@ class CreateResolucionsTable extends Migration
         Schema::create('resolucions', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->unsignedInteger('modelo_id');
+            $table->unsignedInteger('formulario_id');
             $table->unsignedInteger('medico_id');
             $table->unsignedInteger('paciente_id');
-            $table->foreign('modelo_id')->references('id')->on('modelo formularios')->onDelete('cascade');
+            $table->foreign('formulario_id')->references('id')->on('formularios')->onDelete('cascade');
             $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
         });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModeloFormulariosTable extends Migration
+class CreatePreguntasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateModeloFormulariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('modelo_formularios', function (Blueprint $table) {
+        Schema::create('preguntas', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('nombre');
-            $table->unsignedInteger('medico_id');
-            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
+            $table->string('enunciado');
+
+            $table->unsignedInteger('formulario_id');
+            $table->foreign('formulario_id')->references('id')->on('formularios')->onDelete('cascade');
 
         });
     }
@@ -30,6 +31,6 @@ class CreateModeloFormulariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modelo_formularios');
+        Schema::dropIfExists('preguntas');
     }
 }

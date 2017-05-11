@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App;
@@ -8,3 +9,4 @@ class Updrs extends Model
 {
     //
 }
+

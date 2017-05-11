@@ -61,6 +61,12 @@
                             {!! Form::text('grado',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
+                        <div class="form-group">
+                            {!!Form::label('medico_id', 'Medico') !!}
+                            <br>
+                            {!! Form::select('id', $medicos, ['class' => 'form-control', 'required']) !!}
+                        </div>
+
 
 
 

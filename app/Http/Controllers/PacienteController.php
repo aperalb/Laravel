@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Medico;
 use App\Paciente;
+
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -27,8 +29,9 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
-        return view('paciente/create');
+        $medicos = Medico::all()->pluck('fullname','id');
+
+        return view('paciente/create', ['medicos'=>$medicos]);
     }
 
     /**
