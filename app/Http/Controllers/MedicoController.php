@@ -100,10 +100,9 @@ class MedicoController extends Controller
 
         $medico = Medico::find($id);
         $medico->fill($request->all());
-
-        /**$medico->user->name = $request->get('name');
-        $medico->user->apellido = $request->get('apellido');
-        $medico->user->especialidad = $request->get('especialidad');*/
+        $user = $medico->user;
+        $user->fill($request->all());
+        $user->save();
         $medico->save();
 
         flash('Medico modificado correctamente');

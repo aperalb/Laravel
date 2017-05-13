@@ -13,8 +13,8 @@
                         {!! Form::model($medico, [ 'route' => ['medico.update',$medico->id], 'method'=>'PUT']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('nombre', 'Nombre del medico') !!}
-                            {!! Form::text('nombre',$medico->user->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('name', 'Nombre del medico') !!}
+                            {!! Form::text('name',$medico->user->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         <div class="form-group">

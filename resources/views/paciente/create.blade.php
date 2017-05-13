@@ -64,7 +64,7 @@
                         <div class="form-group">
                             {!!Form::label('medico_id', 'Medico') !!}
                             <br>
-                            {!! Form::select('id', $medicos, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('medico_id', $medicos, ['class' => 'form-control', 'required']) !!}
                         </div>
 
 

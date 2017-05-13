@@ -9,13 +9,14 @@ class Paciente extends Model
     protected $fillable=
         [
             'nombre', 'apellidos', 'dni', 'nuhsa', 'fechaNac', 'fechaInicioPD', 'sintomasMotores',
-            'sintomasCognitivos', 'observaciones', 'grado'
+            'sintomasCognitivos', 'observaciones', 'grado', 'medico_id'
         ];
 
 
-    public function Medico(){
+    public function medico(){
         return $this -> belongsTo('App/Medico');
     }
+
 
 
 

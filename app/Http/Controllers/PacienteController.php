@@ -29,8 +29,8 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        $medicos = Medico::all()->pluck('fullname','id');
 
+        $medicos = Medico::all()->pluck('fullname','id');
         return view('paciente/create', ['medicos'=>$medicos]);
     }
 
@@ -58,13 +58,15 @@ class PacienteController extends Controller
         ]);
 
         //
-        $paciente = new Paciente($request->all()); //DATA
+        $paciente = new Paciente($request->all());
+       
+        //$paciente->medico_id = $request()
         $paciente->save();
 
 
         flash('Paciente creado correctamente');
 
-        return redirect()->route('paciente/index');
+        return redirect()->route('paciente.index');
     }
 
     /**
@@ -87,9 +89,9 @@ class PacienteController extends Controller
     public function edit($id)
     {
         //
-        $paciente = Especialidad::find($id);
+        $paciente = Paciente::find($id);
 
-        return view('paciente/edit')->with('paciente', $paciente);
+        return view('paciente.edit')->with('paciente', $paciente);
     }
 
     /**
@@ -121,7 +123,7 @@ class PacienteController extends Controller
 
         flash('Paciente modificado correctamente');
 
-        return redirect()->route('paciente/index');
+        return redirect()->route('paciente.index');
     }
 
     /**
