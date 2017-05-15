@@ -13,11 +13,19 @@ class Paciente extends Model
         ];
 
 
-    public function medico(){
+    public function medico()
+    {
         return $this -> belongsTo('App/Medico');
     }
 
-
+    public function Tratamiento()
+    {
+        return $this -> hasMany('App\Tratamiento');
+    }
+    public function getFullnameAttribute()
+    {
+        return $this->nombre . ' ' . $this->apellidos;
+    }
 
 
 

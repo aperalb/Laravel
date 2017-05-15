@@ -32,4 +32,7 @@ class User extends Authenticatable
         return $this->hasOne('App\Medico');
     }
 
+    public function Administrador(){
+        return $this->hasOne('App\Administrador');
+    }
 }

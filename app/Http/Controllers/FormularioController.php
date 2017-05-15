@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Medico;
-use App\Paciente;
 
 use Illuminate\Http\Request;
+use App\Formulario;
 
-class PacienteController extends Controller
+class FormularioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,9 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        $pacientes = Paciente::all();
+        $formularios = Formulario::all();
 
-        return view('paciente/index',['pacientes'=>$pacientes] );
-
-        //
+        return view('formulario/index')->with('formularios', $formularios);
     }
 
     /**
@@ -29,9 +26,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-
-        $medicos = Medico::all()->pluck('fullname','id');
-        return view('paciente/create', ['medicos'=>$medicos]);
+        return view('formulario/create');
     }
 
     /**
@@ -42,28 +37,16 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
-
             'nombre' => 'required|max:255',
-            'apellidos'=> 'required|max:255',
-            'dni',
-            'fechaNac',
-            'fechaInicioPD',
-            'sintomasMotores',
-            'sintomasCognitivos',
-            'observaciones',
-            'grado'
-
         ]);
 
-        //
-        $paciente = new Paciente($request->all());
-        $paciente->save();
+        $formulario = new Formulario($request->all());
+        $formulario->save();
 
-        flash('Paciente creado correctamente');
+        flash('Formulario creado correctamente');
 
-        return redirect()->route('paciente.index');
+        return redirect()->route('formulario.index');
     }
 
     /**
@@ -74,7 +57,7 @@ class PacienteController extends Controller
      */
     public function show($id)
     {
-        // getNombrecompletoAttribute
+        //
     }
 
     /**
@@ -85,10 +68,9 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {
-        //
-        $paciente = Paciente::find($id);
+        $formulario = Formulario::find($id);
 
-        return view('paciente.edit')->with('paciente', $paciente);
+        return view('formulario/edit')->with('formulario', $formulario);
     }
 
     /**
@@ -100,27 +82,18 @@ class PacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $this->validate($request, [
             'nombre' => 'required|max:255',
-            'apellidos'=> 'required|max:255',
-            'dni',
-            'fechaNac',
-            'fechaInicioPD',
-            'sintomasMotores',
-            'sintomasCognitivos',
-            'observaciones',
-            'grado'
         ]);
 
-        $paciente = Paciente::find($id);
-        $paciente->fill($request->all());
+        $formulario = formulario::find($id);
+        $formulario->fill($request->all());
 
-        $paciente->save();
+        $formulario->save();
 
-        flash('Paciente modificado correctamente');
+        flash('Formulario modificado correctamente');
 
-        return redirect()->route('paciente.index');
+        return redirect()->route('formulario.index');
     }
 
     /**
@@ -132,16 +105,5 @@ class PacienteController extends Controller
     public function destroy($id)
     {
         //
-        $paciente = Paciente::find($id);
-        $paciente->delete();
-        flash('Paciente borrado correctamente');
-
-        return redirect()->route('paciente.index');
-    }
-
-    public function destroyAll(){
-
-        //
-
     }
 }

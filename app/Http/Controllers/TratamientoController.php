@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Medico;
-use App\Paciente;
 
 use Illuminate\Http\Request;
+use App\Tratamiento;
+use App\Paciente;
 
-class PacienteController extends Controller
+class TratamientoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,10 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        $pacientes = Paciente::all();
+        $tratamientos = Tratamiento::all();
+        return view('tratamiento/index',['tratamientos'=>$tratamientos]);
 
-        return view('paciente/index',['pacientes'=>$pacientes] );
 
-        //
     }
 
     /**
@@ -30,8 +29,9 @@ class PacienteController extends Controller
     public function create()
     {
 
-        $medicos = Medico::all()->pluck('fullname','id');
-        return view('paciente/create', ['medicos'=>$medicos]);
+        $pacientes = Paciente::all()->pluck('fullname','id');
+        return view('tratamiento/create',['pacientes'=>$pacientes]);
+
     }
 
     /**
@@ -42,28 +42,21 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
 
-            'nombre' => 'required|max:255',
-            'apellidos'=> 'required|max:255',
-            'dni',
-            'fechaNac',
-            'fechaInicioPD',
-            'sintomasMotores',
-            'sintomasCognitivos',
-            'observaciones',
-            'grado'
+            'finalidad' => 'required|max:255',
+            'medicamento'=> 'required|max:255',
+            'dosis'=> 'required|numeric',
+            'frecuencia'=> 'required|numeric'
 
         ]);
+        $tratamiento = new Tratamiento($request->all());
+        $tratamiento->save();
 
-        //
-        $paciente = new Paciente($request->all());
-        $paciente->save();
 
-        flash('Paciente creado correctamente');
+        flash('Tratamiento creado correctamente');
 
-        return redirect()->route('paciente.index');
+        return redirect()->route('tratamiento.index');
     }
 
     /**
@@ -74,7 +67,7 @@ class PacienteController extends Controller
      */
     public function show($id)
     {
-        // getNombrecompletoAttribute
+        //
     }
 
     /**
@@ -85,10 +78,8 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {
-        //
-        $paciente = Paciente::find($id);
-
-        return view('paciente.edit')->with('paciente', $paciente);
+        $tratamiento = Tratamiento::find($id);
+        return view('tratamiento.edit')->with('tratamiento', $tratamiento);
     }
 
     /**
@@ -100,27 +91,23 @@ class PacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $this->validate($request, [
-            'nombre' => 'required|max:255',
-            'apellidos'=> 'required|max:255',
-            'dni',
-            'fechaNac',
-            'fechaInicioPD',
-            'sintomasMotores',
-            'sintomasCognitivos',
-            'observaciones',
-            'grado'
+
+            'finalidad' => 'required|max:255',
+            'medicamento'=> 'required|max:255',
+            'dosis'=> 'required|numeric',
+            'frecuencia'=> 'required|numeric'
+
         ]);
 
-        $paciente = Paciente::find($id);
-        $paciente->fill($request->all());
+        $tratamiento = Tratamiento::find($id);
+        $tratamiento->fill($request->all());
 
-        $paciente->save();
+        $tratamiento->save();
 
-        flash('Paciente modificado correctamente');
+        flash('Tratamiento modificado correctamente');
 
-        return redirect()->route('paciente.index');
+        return redirect()->route('tratamiento.index');
     }
 
     /**
@@ -132,9 +119,9 @@ class PacienteController extends Controller
     public function destroy($id)
     {
         //
-        $paciente = Paciente::find($id);
-        $paciente->delete();
-        flash('Paciente borrado correctamente');
+        $tratamiento = Tratamiento::find($id);
+        $tratamiento->delete();
+        flash('Tratamiento borrado correctamente');
 
         return redirect()->route('paciente.index');
     }

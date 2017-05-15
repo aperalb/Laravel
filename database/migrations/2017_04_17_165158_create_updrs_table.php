@@ -18,7 +18,9 @@ class CreateUpdrsTable extends Migration
             $table->timestamps();
             $table->boolean('estado');
             $table->float('dosis_supramaxima');
-            $table->integer('talla');
+            $table->string('photo');
+            $table->string('video');
+            $table->float('talla');
             $table->float('peso');
             $table->boolean('donante');
             $table->float('tension_arterial');

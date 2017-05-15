@@ -18,8 +18,8 @@ class CreateTratamientosTable extends Migration
             $table->timestamps();
             $table->string('finalidad');
             $table->string('medicamento');
-            $table->string('posologia');
-
+            $table->float('dosis');
+            $table->float('frecuencia');
             $table->unsignedInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
 

@@ -33,7 +33,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
@@ -44,5 +43,12 @@ Route::resource('medico', 'MedicoController');
 
 Route::resource('paciente', 'PacienteController');
 
+Route::resource('tratamiento', 'TratamientoController');
+
+Route::resource('admon', 'AdministradorController');
+
+Route::resource('formulario', 'FormularioController');
+
+Route::resource('pregunta','PreguntaController');
 
 ?>

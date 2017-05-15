@@ -8,7 +8,15 @@ class Administrador extends Model
 {
     protected $fillable=
         [
-            'nombre', 'dni',
-            'sintomasCognitivos', 'observaciones', 'grado'
+            'salario', 'user_id'
         ];
+
+    public function User(){
+        return $this -> belongsTo('App\User');
+    }
+
+    public function getFullnameAttribute()
+    {
+        return $this->user->name . ' ' . $this->user->apellido;
+    }
 }

@@ -17,8 +17,7 @@ class CreateFormulariosTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('nombre');
-            $table->unsignedInteger('medico_id');
-            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
+
         });
     }
 
