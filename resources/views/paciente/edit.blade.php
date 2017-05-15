@@ -23,6 +23,11 @@
                         </div>
 
                         <div class="form-group">
+                            {!! Form::label('sexo', 'Sexo del paciente') !!}
+                            {!! Form::text('sexo',$paciente->sexo,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        </div>
+
+                        <div class="form-group">
                             {!! Form::label('dni', 'DNI del paciente') !!}
                             {!! Form::text('dni',$paciente->dni,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>

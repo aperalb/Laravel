@@ -47,6 +47,7 @@ class PacienteController extends Controller
 
             'nombre' => 'required|max:255',
             'apellidos'=> 'required|max:255',
+            'sexo',
             'dni',
             'fechaNac',
             'fechaInicioPD',
@@ -104,6 +105,7 @@ class PacienteController extends Controller
         $this->validate($request, [
             'nombre' => 'required|max:255',
             'apellidos'=> 'required|max:255',
+            'sexo',
             'dni',
             'fechaNac',
             'fechaInicioPD',

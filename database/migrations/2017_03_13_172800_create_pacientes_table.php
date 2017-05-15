@@ -18,6 +18,7 @@ class CreatePacientesTable extends Migration
             $table->timestamps();
             $table->string('nombre');
             $table->string('apellidos');
+            $table->string('sexo');
             $table->string('dni');
             $table->string('nuhsa');
             $table->date('fechaNac');
