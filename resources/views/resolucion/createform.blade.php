@@ -21,8 +21,7 @@
                             <div>
                                 <?php $i = $i+1; ?>
                             {{$pregunta->enunciado}}
-
-                            <input type="text" name = "vaya" required = true>
+                            <input type="text" name = "res[<?php echo (string)$i ?>]" required= true />
                             </div>
                             <br>
                         @endforeach
