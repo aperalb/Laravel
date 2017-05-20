@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Pacientes</div>
 
@@ -24,6 +24,7 @@
                                 <th>Grado de afectación</th>
 
                                 <th colspan="3">Acciones</th>
+                                <th colspan="3">Evaluaciones</th>
                             </tr>
                             @foreach ($pacientes as $paciente)
                             <tr>
@@ -58,6 +59,35 @@
                                     {!! Form::close() !!}
 
                                 </td>
+
+                                  <td>
+                                      {!! Form::open(['route' => ['resolucion.createupdrs',$paciente->id], 'method' => 'get']) !!}
+                                      {!! Form::submit('UPDRS', ['class'=> 'btn btn-danger' ])!!}
+                                      {!! Form::close() !!}
+
+                                  </td>
+
+                                  <td>
+                                      {!! Form::open(['route' => ['resolucion.createbarthel',$paciente->id], 'method' => 'get']) !!}
+                                      {!! Form::submit('BARTHEL', ['class'=> 'btn btn-danger' ])!!}
+                                      {!! Form::close() !!}
+
+                                  </td>
+
+                                  <td>
+                                      {!! Form::open(['route' => ['resolucion.createedc',$paciente->id], 'method' => 'get']) !!}
+                                      {!! Form::submit('EDC', ['class'=> 'btn btn-danger' ])!!}
+                                      {!! Form::close() !!}
+
+                                  </td>
+
+
+
+
+
+
+
+
                             </tr>
                             @endforeach
                         </table>

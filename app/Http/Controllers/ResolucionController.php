@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Updrsresolucion;
 use Illuminate\Http\Request;
-use App\Pregunta;
+use App\Resolucion;
 use App\Formulario;
+use App\Paciente;
+use App\Medico;
+use App\Respuesta;
 
-class PreguntaController extends Controller
+class ResolucionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +19,8 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        $preguntas = Pregunta::all();
-        return view('pregunta/index')->with('preguntas', $preguntas);
+        $resoluciones = Resolucion::all();
+        return view('resolucion/index', ['resoluciones'=>$resoluciones]);
 
     }
 
@@ -27,11 +31,36 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        $formularios = Formulario::all()->pluck('nombre','id');
-        return view('pregunta/create', ['formularios'=>$formularios]);
+
+        $formularios = Formulario::all()->pluck('name','id');
+        $pacientes = Paciente::all()->pluck('fullname','id');
+
+
+        return view('resolucion/create', ['formularios'=>$formularios,'pacientes'=>$pacientes]);
     }
 
-    /**
+    public function createupdrs($id)
+    {
+        $formulario = Formulario::find(6);
+        $paciente = Paciente::find($id);
+        return view('resolucion/createupdrs', ['formulario'=>$formulario,'paciente'=>$paciente]);
+    }
+
+    public function createbarthel($id)
+    {
+        $formulario = Formulario::find(7);
+        $paciente = Paciente::find($id);
+        return view('resolucion/createform', ['formulario'=>$formulario,'paciente'=>$paciente]);
+    }
+
+    public function createedc($id)
+    {
+        $formulario = Formulario::find(8);
+        $paciente = Paciente::find($id);
+        return view('resolucion/createform', ['formulario'=>$formulario,'paciente'=>$paciente]);
+    }
+
+        /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -39,13 +68,13 @@ class PreguntaController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
+        $resolucion = new Resolucion($request->all());
+        $resolucion->save();
 
-        $pregunta = new pregunta($request->all());
-        $pregunta->save();
+        $resolucion->id;
 
-        flash('Pregunta creado correctamente');
 
-        return redirect()->route('pregunta.index');
     }
 
     /**
@@ -56,8 +85,7 @@ class PreguntaController extends Controller
      */
     public function show($id)
     {
-        $pregunta = Pregunta::find($id);
-        return view('respuesta/create', ['pregunta'=>$pregunta]);
+        //
     }
 
     /**
@@ -68,9 +96,7 @@ class PreguntaController extends Controller
      */
     public function edit($id)
     {
-        $pregunta = Pregunta::find($id);
-
-        return view('pregunta.edit')->with('pregunta', $pregunta);
+        //
     }
 
     /**
@@ -82,14 +108,7 @@ class PreguntaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pregunta = Pregunta::find($id);
-        $pregunta->fill($request->all());
-
-        $pregunta->save();
-
-        flash('pregunta modificado correctamente');
-
-        return redirect()->route('pregunta.index');
+        //
     }
 
     /**

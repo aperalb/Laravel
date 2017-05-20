@@ -8,7 +8,7 @@ class Formulario extends Model
 {
     protected $fillable = [ 'nombre'];
 
-    public function Pregunta()
+    public function preguntas()
     {
         return $this -> hasMany('App\Pregunta');
     }
@@ -17,6 +17,5 @@ class Formulario extends Model
     {
         return $this->nombre;
     }
-
 
 }

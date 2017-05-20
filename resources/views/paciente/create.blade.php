@@ -24,7 +24,7 @@
 
                         <div class="form-group">
                             {!! Form::label('sexo', 'Sexo del paciente') !!}
-                            {!! Form::text('sexo',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::select('sexo', ["HOMBRE", "MUJER"],null,['class'=>'form-control', 'required', 'autofocus']) !!}
                             <br> </br>
                         </div>
 

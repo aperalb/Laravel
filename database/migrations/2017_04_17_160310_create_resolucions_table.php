@@ -16,6 +16,20 @@ class CreateResolucionsTable extends Migration
         Schema::create('resolucions', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+
+            /** Nullables, correspondientes a UPDRS, si procede:
+            */
+            $table->string('estado')->nullable();
+            $table->string('latencia')->nullable();
+            $table->string('video')->nullable();
+            $table->string('foto')->nullable();
+            $table->float('talla')->nullable();
+            $table->float('peso')->nullable();
+            $table->string('donante')->nullable();
+            $table->float('tension')->nullable();
+            /**
+             * */
+
             $table->unsignedInteger('formulario_id');
             $table->unsignedInteger('medico_id');
             $table->unsignedInteger('paciente_id');

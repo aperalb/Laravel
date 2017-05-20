@@ -17,15 +17,11 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Enunciado</th>
-                                <th>Formulario</th>
-
                                 <th colspan="2">Acciones</th>
                             </tr>
-                            @foreach ($preguntas as $pregunta)
+
                             <tr>
                                 <td>{{ $pregunta->enunciado }}</td>
-                                <td>{{ $pregunta->formulario->nombre }}</td>
-
                                 <td>
                                     {!! Form::open(['route' => ['pregunta.edit',$pregunta->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
@@ -39,7 +35,7 @@
 
                                 </td>
                             </tr>
-                            @endforeach
+
                         </table>
                     </div>
                 </div>

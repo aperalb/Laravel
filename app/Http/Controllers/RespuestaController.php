@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Respuesta;
 use App\Pregunta;
-use App\Formulario;
 
-class PreguntaController extends Controller
+class RespuestaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        $preguntas = Pregunta::all();
-        return view('pregunta/index')->with('preguntas', $preguntas);
-
+        $respuestas = Respuesta::all();
+        return view('respuesta/index')->with('respuestas', $respuestas);
     }
 
     /**
@@ -27,10 +26,18 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        $formularios = Formulario::all()->pluck('nombre','id');
-        return view('pregunta/create', ['formularios'=>$formularios]);
+        $preguntas = Pregunta::all()->pluck('enunciado','id');
+
+        return view('respuesta/create', ['preguntas'=>$preguntas]);
+
     }
 
+    public function createFromPregunta($id){
+
+        $pregunta = Pregunta::find($id);
+        return view('respuesta/create', ['pregunta'=>$pregunta]);
+
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -39,14 +46,9 @@ class PreguntaController extends Controller
      */
     public function store(Request $request)
     {
-
-        $pregunta = new pregunta($request->all());
-        $pregunta->save();
-
-        flash('Pregunta creado correctamente');
-
-        return redirect()->route('pregunta.index');
+        //
     }
+
 
     /**
      * Display the specified resource.
@@ -56,8 +58,7 @@ class PreguntaController extends Controller
      */
     public function show($id)
     {
-        $pregunta = Pregunta::find($id);
-        return view('respuesta/create', ['pregunta'=>$pregunta]);
+        //
     }
 
     /**
@@ -68,9 +69,10 @@ class PreguntaController extends Controller
      */
     public function edit($id)
     {
-        $pregunta = Pregunta::find($id);
+        $respuesta = Respuestas::find($id);
 
-        return view('pregunta.edit')->with('pregunta', $pregunta);
+        return view('respuesta.edit')->with('respuesta', $respuesta);
+
     }
 
     /**
@@ -82,14 +84,14 @@ class PreguntaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pregunta = Pregunta::find($id);
-        $pregunta->fill($request->all());
+        $respuesta = Respuesta::find($id);
+        $respuesta->fill($request->all());
 
-        $pregunta->save();
+        $respuesta->save();
 
         flash('pregunta modificado correctamente');
 
-        return redirect()->route('pregunta.index');
+        return redirect()->route('respuesta.index');
     }
 
     /**

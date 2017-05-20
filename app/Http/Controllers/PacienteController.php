@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Medico;
 use App\Paciente;
+use App\Resolucion;
 
 use Illuminate\Http\Request;
 

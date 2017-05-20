@@ -51,4 +51,18 @@ Route::resource('formulario', 'FormularioController');
 
 Route::resource('pregunta','PreguntaController');
 
+Route::get('createupdrs/{id}', 'ResolucionController@createupdrs')->name('resolucion.createupdrs');
+
+Route::get('createbarthel/{id}', 'ResolucionController@createbarthel')->name('resolucion.createbarthel');
+
+Route::get('createedc/{id}', 'ResolucionController@createedc')->name('resolucion.createedc');
+
+
+
+Route::resource('resolucion','ResolucionController');
+
+Route::resource('respuesta', 'RespuestaController');
+
+
+
 ?>

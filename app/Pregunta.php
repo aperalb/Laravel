@@ -7,8 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Pregunta extends Model
 {
     protected $fillable = [ 'enunciado', 'formulario_id'];
-    public function medico()
+
+    public function formulario()
     {
-        return $this -> belongsTo('App/Formulario');
+        return $this -> belongsTo('App\Formulario');
     }
+    public function Respuestas(){
+        return $this -> hasMany('App\Respuesta');
+    }
+
+
+
 }

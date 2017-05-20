@@ -104,6 +104,10 @@ class FormularioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $formulario = Formulario::find($id);
+        $formulario->delete();
+        flash('Formulario borrado correctamente');
+
+        return redirect()->route('formulario.index');
     }
 }

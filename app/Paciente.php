@@ -8,7 +8,7 @@ class Paciente extends Model
 {
     protected $fillable=
         [
-            'nombre', 'apellidos', 'dni', 'nuhsa', 'fechaNac', 'fechaInicioPD', 'sintomasMotores',
+            'nombre', 'apellidos', 'sexo', 'dni', 'nuhsa', 'fechaNac', 'fechaInicioPD', 'sintomasMotores',
             'sintomasCognitivos', 'observaciones', 'grado', 'medico_id'
         ];
 
@@ -22,6 +22,13 @@ class Paciente extends Model
     {
         return $this -> hasMany('App\Tratamiento');
     }
+
+    public function Resolucion()
+    {
+        return $this -> hasMany('App\Resolucion');
+    }
+
+
     public function getFullnameAttribute()
     {
         return $this->nombre . ' ' . $this->apellidos;
