@@ -50,7 +50,7 @@ class ResolucionController extends Controller
     {
         $formulario = Formulario::find(2);
         $paciente = Paciente::find($id);
-        return view('resolucion/createbarthel', ['formulario'=>$formulario,'paciente'=>$paciente]);
+        return view('resolucion/createform', ['formulario'=>$formulario,'paciente'=>$paciente]);
     }
 
     public function createedc($id)
@@ -92,7 +92,9 @@ class ResolucionController extends Controller
             }
 
 
-       }else if(isset($request['barthel'])){
+
+       }else if(isset($request['updrs'])){
+
 
         }
         return redirect()->route('paciente.index');
