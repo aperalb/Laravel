@@ -27,14 +27,14 @@ class CreateResolucionsTable extends Migration
             $table->float('peso')->nullable();
             $table->string('donante')->nullable();
             $table->float('tension')->nullable();
+
+
             /**
              * */
 
             $table->unsignedInteger('formulario_id');
-            $table->unsignedInteger('medico_id');
             $table->unsignedInteger('paciente_id');
             $table->foreign('formulario_id')->references('id')->on('formularios')->onDelete('cascade');
-            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
         });
     }

@@ -87,7 +87,7 @@ class PreguntaController extends Controller
 
         $pregunta->save();
 
-        flash('pregunta modificado correctamente');
+        flash('pregunta modificada correctamente');
 
         return redirect()->route('pregunta.index');
     }
@@ -100,6 +100,10 @@ class PreguntaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pregunta = Pregunta::find($id);
+        $pregunta->delete();
+        flash('Paciente borrado correctamente');
+
+        return redirect()->route('pregunta.index');
     }
 }

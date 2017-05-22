@@ -18,7 +18,7 @@ class CreatePreguntasTable extends Migration
             $table->timestamps();
             $table->string('enunciado');
 
-            $table->unsignedInteger('formulariore_id');
+            $table->unsignedInteger('formulario_id');
             $table->foreign('formulario_id')->references('id')->on('formularios')->onDelete('cascade');
 
         });

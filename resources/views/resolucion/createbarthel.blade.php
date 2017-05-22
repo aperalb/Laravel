@@ -17,9 +17,9 @@
                         {{$paciente->apellidos}}
                         <br>
 
-                        <input type = "hidden" name ="paciente_id" value =<?php echo $paciente->id ?>>
-                        <input type = "hidden" name ="formulario_id" value = <?php echo $formulario->id ?>>
-                        <input type = "hidden" name ="edc" value = "<?php echo "3" ?>">
+                        <input type = "hidden" name ="paciente_id" value ="[<?php echo $paciente->id ?>]">
+                        <input type = "hidden" name ="formulario_id" value = "[<?php echo $formulario->id ?>]">
+                        <input type = "hidden" name ="edc" value = "[<?php echo "2" ?>]">
 
 
                     <?php $i = 0; ?>
@@ -27,10 +27,8 @@
                             <div>
                                 <?php $i = $i+1; ?>
                             {{$pregunta->enunciado}}
-
-
-
-                                    <input type="text" name = "<?php echo  $pregunta->id ?>"  required= true />
+                                    <input type="hidden" name = "res[<?php echo 'preguntaedc'.(string)$pregunta->id ?>]" value ="[<?php echo $pregunta->id?>]" />
+                                    <input type="text"   name = "res[<?php echo "respuestaedc".(string)$i ?>]" required= true />
                             </div>
                             <br>
                         @endforeach
