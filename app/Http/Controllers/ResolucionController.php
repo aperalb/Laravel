@@ -69,46 +69,20 @@ class ResolucionController extends Controller
      */
     public function store(Request $request)
     {
-
-        if(isset($request['edc']) or isset($request['barthel'])) {
             $resolucion = new Resolucion($request->all());
             $resolucion->save();
-
 
             foreach ($request->all() as $key => $value) {
                 if (is_numeric($key)) {
                     $res = new Respuesta();
-
                     $res->pregunta_id = (int)$key;
                     $res->respuesta = $value;
                     $res->resolucion_id = $resolucion->id;
 
                     $res->save();
-
-                } else {
-
-                    $resolucion = new Resolucion($request->all());
-                    $resolucion->save();
-                    foreach ($request->all() as $key => $value) {
-                        if (is_numeric($key)) {
-                            $res = new Respuesta();
-
-                            $res->pregunta_id = (int)$key;
-                            $res->respuesta = $value;
-                            $res->resolucion_id = $resolucion->id;
-
-                            $res->save();
-
-                        }
-                    }
                 }
-
             }
-
-
-        }
         return redirect()->route('paciente.index');
-
     }
 
     /**

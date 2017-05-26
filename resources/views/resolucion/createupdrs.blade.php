@@ -69,9 +69,9 @@
                             <br>
                         @endforeach
 
-                        <input type = "hidden" name ="paciente_id" value ="[<?php echo $paciente->id ?>]">
-                        <input type = "hidden" name ="formulario_id" value = "[<?php echo $formulario->id ?>]">
-                        <input type = "hidden" name ="updrs" value = "[<?php echo "1" ?>]">
+                        <input type = "hidden" name ="paciente_id" value ="<?php echo $paciente->id ?>">
+                        <input type = "hidden" name ="formulario_id" value = "<?php echo $formulario->id ?>">
+                        <input type = "hidden" name ="updrs" value = "<?php echo "1" ?>">
 
                             {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
