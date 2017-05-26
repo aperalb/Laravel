@@ -41,7 +41,7 @@
                                 <td>{{ $paciente->grado }}</td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['paciente.edit',$paciente->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['paciente.show',$paciente->id], 'method' => 'get']) !!}
                                     {!! Form::submit('Abrir', ['class'=> 'btn btn-info'])!!}
                                     {!! Form::close() !!}
 
@@ -83,14 +83,14 @@
 
                                 <td><div class="btn-group">
                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Action <span class="caret"></span>
+                                            Más <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Action</a></li>
-                                            <li><a href="#">Another action</a></li>
-                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href={{url('/welcome')}}#">Más</a></li>
+                                            <li><a href={{url('/welcome')}}#">Ver Tratamientos</a></li>
+                                            <li><a href={{url('/welcome')}}#">Ver Resoluciones</a></li>
                                             <li role="separator" class="divider"></li>
-                                            <li><a href="#">Separated link</a></li>
+                                            <li><a href="#">Otros</a></li>
                                         </ul>
                                     </div>
                                 </td>

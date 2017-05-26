@@ -18,7 +18,7 @@ class Paciente extends Model
         return $this -> belongsTo('App/Medico');
     }
 
-    public function Tratamiento()
+    public function tratamientos()
     {
         return $this -> hasMany('App\Tratamiento');
     }

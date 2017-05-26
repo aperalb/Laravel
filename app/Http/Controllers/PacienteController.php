@@ -76,7 +76,9 @@ class PacienteController extends Controller
      */
     public function show($id)
     {
-        // getNombrecompletoAttribute
+       $paciente = Paciente::find($id);
+
+       return view('paciente/show', ['paciente'=>$paciente]);
     }
 
     /**
@@ -126,12 +128,7 @@ class PacienteController extends Controller
         return redirect()->route('paciente.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

@@ -30,7 +30,7 @@
 
 
 
-                                    <input type="text" name = "<?php echo  $pregunta->id ?>"  required= true />
+                                    <input type="text" name = "<?php echo  $pregunta->id ?>" web required= true />
                             </div>
                             <br>
                         @endforeach

@@ -27,27 +27,7 @@
                             <br>
                         </div>
 
-                        <div class="panel-body">
-                            <form method="POST" action="http://diamond-chaos.codio.io:3000/tuto/public/storage/create" accept-charset="UTF-8" enctype="multipart/form-data">
 
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Nuevo Archivo</label>
-                                    <div class="col-md-6">
-                                        <input type="file" class="form-control" name="file" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">Enviar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div>
                         {!! Form::label('estado', 'Estado del paciente') !!}
                             {!! Form::select('sexo', ["OFF", "ON"],null,['class'=>'form-control', 'required', 'autofocus']) !!}
                             <br>
@@ -69,10 +49,9 @@
                             <br>
                             <br>
                             {!! Form::label('donante', '¿Es donante?') !!}
-                            {!! Form::select('donate', ["SI", "NO"],null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::select('donante', ["SI", "NO"],null,['class'=>'form-control', 'required', 'autofocus']) !!}
                             <br>
                             <br>
-                        </div>
 
                         <P ALIGN=center>
                         <b>{{'PREGUNTAS DE LA UPDRS'}}</b>
@@ -83,8 +62,8 @@
                             <div>
                                 <?php $i = $i+1; ?>
                                 {{$pregunta->enunciado}}
-                                <input type="hidden" name = "res[<?php echo 'preguntaupdrs'.(string)$pregunta->id ?>]" value ="[<?php echo $pregunta->id?>]" />
-                                <input type="text"   name = "res[<?php echo 'respuestaupdrs'.(string)$i ?>]" required= true />
+
+                                    <input type="text" name = "<?php echo  $pregunta->id ?>" web required= true />
 
                             </div>
                             <br>
@@ -92,11 +71,11 @@
 
                         <input type = "hidden" name ="paciente_id" value ="[<?php echo $paciente->id ?>]">
                         <input type = "hidden" name ="formulario_id" value = "[<?php echo $formulario->id ?>]">
-                        <input type = "hidden" name ="edc" value = "[<?php echo "1" ?>]">
+                        <input type = "hidden" name ="updrs" value = "[<?php echo "1" ?>]">
 
                             {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
                     </div>
                 </div>
             </div>

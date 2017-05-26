@@ -43,6 +43,7 @@ class ResolucionController extends Controller
     {
         $formulario = Formulario::find(1);
         $paciente = Paciente::find($id);
+
         return view('resolucion/createupdrs', ['formulario'=>$formulario,'paciente'=>$paciente]);
     }
 
@@ -73,34 +74,40 @@ class ResolucionController extends Controller
             $resolucion = new Resolucion($request->all());
             $resolucion->save();
 
-            $array = $request['res'];
 
-            foreach($request->all() as $key=>$value)
-            {
-                if(is_numeric($key)){
+            foreach ($request->all() as $key => $value) {
+                if (is_numeric($key)) {
                     $res = new Respuesta();
 
                     $res->pregunta_id = (int)$key;
                     $res->respuesta = $value;
                     $res->resolucion_id = $resolucion->id;
 
-
                     $res->save();
 
+                } else {
+
+                    $resolucion = new Resolucion($request->all());
+                    $resolucion->save();
+                    foreach ($request->all() as $key => $value) {
+                        if (is_numeric($key)) {
+                            $res = new Respuesta();
+
+                            $res->pregunta_id = (int)$key;
+                            $res->respuesta = $value;
+                            $res->resolucion_id = $resolucion->id;
+
+                            $res->save();
+
+                        }
+                    }
                 }
 
             }
 
 
-
-       }else if(isset($request['updrs'])){
-
-
         }
         return redirect()->route('paciente.index');
-
-
-
 
     }
 
@@ -123,7 +130,8 @@ class ResolucionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $resolucion = Resolucion::find($id);
+        return view('resolucion.edit')->with('resolucion', $resolucion);
     }
 
     /**

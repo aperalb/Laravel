@@ -5,12 +5,22 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Editar pregunta</div>
+                    <div class="panel-heading">Editar Resolucion</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::model($pregunta, [ 'route' => ['pregunta.update',$pregunta->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
+                        @php if($resolucion->formulario == 1){
+                        {{Edición de UPDRS del paciente }}
+
+
+                        }else if($resolucion->formulario_id == 2){
+
+
+
+                        }else if($resolucion->formulario_id ==3) @endphp
+
+                        {!! Form::model($, [ 'route' => ['pregunta.update',$pregunta->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
                         <div class="form-group">
 
                         {!! Form::label('enunciado', 'enunciado de la pregunta') !!}

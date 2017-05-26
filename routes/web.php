@@ -58,11 +58,9 @@ Route::get('createbarthel/{id}', 'ResolucionController@createbarthel')->name('re
 Route::get('createedc/{id}', 'ResolucionController@createedc')->name('resolucion.createedc');
 
 
-
 Route::resource('resolucion','ResolucionController');
 
 Route::resource('respuesta', 'RespuestaController');
-
 
 
 ?>
