@@ -57,6 +57,8 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+                                <img src = "imgs/icono_v1.png">
+
                             </div>
                         </div>
                     </form>

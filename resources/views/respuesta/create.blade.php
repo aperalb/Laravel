@@ -21,7 +21,7 @@
                             <div class="form-group">
                                 {!!Form::hidden('pregunta',$pregunta->id) !!}
                                 <br>
-                                {!! Form::text('respuesta', , ['class' => 'form-control', 'required']) !!}
+                                {!! Form::text('respuesta', $respuesta , ['class' => 'form-control', 'required']) !!}
                             </div>
                         @endif
 

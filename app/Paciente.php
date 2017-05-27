@@ -23,7 +23,7 @@ class Paciente extends Model
         return $this -> hasMany('App\Tratamiento');
     }
 
-    public function Resolucion()
+    public function resoluciones()
     {
         return $this -> hasMany('App\Resolucion');
     }

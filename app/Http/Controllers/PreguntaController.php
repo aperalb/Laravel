@@ -39,7 +39,7 @@ class PreguntaController extends Controller
      */
     public function store(Request $request)
     {
-
+        rules($request);
         $pregunta = new pregunta($request->all());
         $pregunta->save();
 

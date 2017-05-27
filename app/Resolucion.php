@@ -24,6 +24,16 @@ class Resolucion extends Model
         return $this -> belongsTo('App\Paciente');
     }
 
+    public function puntuacion(){
+        $puntuacion = 0;
+        $respuestas = $this->respuestas;
+        foreach($respuestas as $res) {
+            $puntuacion = $puntuacion + $res->respuesta;
+        }
+
+        return $puntuacion;
+
+    }
 
 
 }

@@ -28,7 +28,7 @@
                                 <?php $i = $i+1; ?>
                             {{$pregunta->enunciado}}
                                     <input type="hidden" name = "res[<?php echo 'preguntaedc'.(string)$pregunta->id ?>]" value ="[<?php echo $pregunta->id?>]" />
-                                    <input type="text"   name = "res[<?php echo "respuestaedc".(string)$i ?>]" required= true />
+                                    <input type="type"   name = "res[<?php echo "respuestaedc".(string)$i ?>]" required= true />
                             </div>
                             <br>
                         @endforeach

@@ -69,7 +69,7 @@ class RespuestaController extends Controller
      */
     public function edit($id)
     {
-        $respuesta = Respuestas::find($id);
+        $respuesta = Respuesta::find($id);
 
         return view('respuesta.edit')->with('respuesta', $respuesta);
 
@@ -84,6 +84,7 @@ class RespuestaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request);
         $respuesta = Respuesta::find($id);
         $respuesta->fill($request->all());
 

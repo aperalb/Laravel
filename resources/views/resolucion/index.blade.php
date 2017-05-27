@@ -13,25 +13,30 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                <th>Enunciado</th>
-                                <th colspan="2">Acciones</th>
+                                <th>Tipo</th>
+
+                                <th colspan="3">Acciones</th>
                             </tr>
 
-                            <tr>
-                                <td>{{ $pregunta->enunciado }}</td>
-                                <td>
-                                    {!! Form::open(['route' => ['pregunta.edit',$pregunta->id], 'method' => 'get']) !!}
-                                    {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
-                                    {!! Form::close() !!}
+                            @foreach ($resoluciones as $resolucion)
+                                <tr>
+                                    <td>{{ $resolucion->formulario->nombre }}</td>
+                                    <td>{{ $resolucion->paciente->nombre . " " . $resolucion->paciente->apellidos  }}</td>
 
-                                </td>
-                                <td>
-                                    {!! Form::open(['route' => ['pregunta.destroy',$pregunta->id], 'method' => 'delete']) !!}
-                                    {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                                    {!! Form::close() !!}
+                                    <td>
+                                        {!! Form::open(['route' => ['resolucion.edit',$resolucion->id], 'method' => 'get']) !!}
+                                        {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
+                                        {!! Form::close() !!}
 
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        {!! Form::open(['route' => ['resolucion.destroy',$resolucion->id], 'method' => 'delete']) !!}
+                                        {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                                        {!! Form::close() !!}
+
+                                    </td>
+                                </tr>
+                            @endforeach
 
                         </table>
                     </div>

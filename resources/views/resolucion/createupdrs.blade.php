@@ -29,7 +29,7 @@
 
 
                         {!! Form::label('estado', 'Estado del paciente') !!}
-                            {!! Form::select('sexo', ["OFF", "ON"],null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::select('estado', ["OFF", "ON"],null,['class'=>'form-control', 'required', 'autofocus']) !!}
                             <br>
                             <br>
                             {!! Form::label('latencia', 'Latencia de la medicación') !!}
@@ -63,7 +63,7 @@
                                 <?php $i = $i+1; ?>
                                 {{$pregunta->enunciado}}
 
-                                    <input type="text" name = "<?php echo  $pregunta->id ?>" web required= true />
+                                    <input type="text" name = "<?php echo  $pregunta->id ?>" web required= true min="0" max="4" />
 
                             </div>
                             <br>

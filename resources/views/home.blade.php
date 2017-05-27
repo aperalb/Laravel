@@ -10,6 +10,13 @@
                 <div class="panel-body">
                     You are logged in!
                 </div>
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <td><a href={{url('/paciente')}}><big><strong>Mis pacientes</strong></big></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href={{url('/resolucion')}}><big><strong>Mis resoluciones</strong></big></a></td>
+                    </tr>
             </div>
         </div>
     </div>

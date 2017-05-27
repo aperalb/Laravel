@@ -26,10 +26,7 @@
                         @foreach($formulario->preguntas as $pregunta)
                             <div>
                                 <?php $i = $i+1; ?>
-                            {{$pregunta->enunciado}}
-
-
-
+                                    {{$pregunta->enunciado}}
                                     <input type="text" name = "<?php echo  $pregunta->id ?>" web required= true />
                             </div>
                             <br>

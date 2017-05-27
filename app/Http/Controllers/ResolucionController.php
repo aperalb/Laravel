@@ -74,9 +74,10 @@ class ResolucionController extends Controller
 
             foreach ($request->all() as $key => $value) {
                 if (is_numeric($key)) {
+
                     $res = new Respuesta();
-                    $res->pregunta_id = (int)$key;
-                    $res->respuesta = $value;
+                    $res->pregunta_id = $key;
+                    $res->respuesta =  $value;
                     $res->resolucion_id = $resolucion->id;
 
                     $res->save();
@@ -117,7 +118,23 @@ class ResolucionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $resolucion = Resolucion::find($id);
+        $resolucion->fill($request->all());
+        $resolucion->save();
+
+        foreach ($request->all() as $key => $value) {
+            if (is_numeric($key) and $value != null) {
+
+                $resEditada = Respuesta::find($key);
+                $resEditada->respuesta = $value;
+                $resEditada->save();
+
+            }
+        }
+        flash('Resolucion modificada correctamente');
+        return redirect()->route('resolucion.index');
+
     }
 
     /**

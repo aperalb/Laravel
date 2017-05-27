@@ -82,7 +82,6 @@
         <a href={{url('/home')}}><big><strong>Iniciar Sesión</strong></big></a>
         <a href={{url('/objectives')}}><big><strong>Objetivos de Dami-PD</strong></big></a>
         <a href={{url('/about')}}><big><strong>Sobre nosotras</strong></big></a>
-        <a href={{url('/tipopregunta')}}><big><strong><font color="#80AFE5">Tipo Pregunta</font></strong></big></a>
         <hr width="700">
     </div>
 </div>

@@ -66,6 +66,10 @@
 
                     <div class="panel-body"> <strong><b>Tratamientos</b></strong>
 
+                        {!! Form::open(['route' => 'tratamiento.create', 'method' => 'get', 'class'=>'inline-important']) !!}
+                        {!!   Form::submit('Crear tratamiento', ['class'=> 'btn btn-primary'])!!}
+                        {!! Form::close() !!}
+
                         @php $tratamientos = $paciente->tratamientos @endphp
 
                         <table class="table table-striped table-bordered">
@@ -94,6 +98,41 @@
                                 <tr>
                             @endforeach
                         </table>
+                    </div>
+
+                    <div class="panel-body"> <strong><b>Resoluciones</b></strong>
+                        @php $resoluciones = $paciente->resoluciones @endphp
+
+                        <table class="table table-striped table-bordered">
+
+                        <tr>
+                            <th>Formulario</th>
+                            <th>Fecha</th>
+                            <th>Puntuacion</th>
+                            <th colspan="2">Acciones</th>
+                        </tr>
+                            <tr>
+                            @foreach ($resoluciones as $resolucion)
+                                <tr>
+                                    <td>{{ $resolucion->formulario->nombre }}</td>
+                                    <td>{{ $resolucion->updated_at }}</td>
+                                    <td>{{ $tratamiento->puntuacion }}</td>
+                                    <td>
+                                        {!! Form::open(['route' => ['resolucion.edit', $resolucion->id], 'method' => 'get']) !!}
+                                        {!! Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
+                                        {!! Form::close() !!}
+                                    </td>
+                                    <td>
+                                        {!! Form::open(['route' => ['resolucion.destroy',$resolucion->id], 'method' => 'delete']) !!}
+                                        {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                                        {!! Form::close() !!}
+
+                                    </td>
+
+
+                                <tr>
+                        @endforeach
+
                     </div>
 
                 </div>
