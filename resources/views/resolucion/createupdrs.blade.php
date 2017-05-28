@@ -62,6 +62,7 @@
                             <div>
                                 <?php $i = $i+1; ?>
                                 {{$pregunta->enunciado}}
+                                    <br>
 
                                     <input type="text" name = "<?php echo  $pregunta->id ?>" web required= true min="0" max="4" />
 

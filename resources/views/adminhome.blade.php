@@ -27,6 +27,9 @@
                     <tr>
                         <td><a href={{url('/formulario')}}><big><strong>Formularios</strong></big></a></td>
                     </tr>
+                    <tr>
+                        <td><a href={{url('/pregunta')}}><big><strong>Preguntas</strong></big></a></td>
+                    </tr>
 
 
             </div>

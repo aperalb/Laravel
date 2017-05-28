@@ -8,11 +8,11 @@ use App\Formulario;
 
 class PreguntaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $preguntas = Pregunta::all();
@@ -39,7 +39,6 @@ class PreguntaController extends Controller
      */
     public function store(Request $request)
     {
-        rules($request);
         $pregunta = new pregunta($request->all());
         $pregunta->save();
 

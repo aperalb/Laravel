@@ -31,16 +31,9 @@ Route::get('administrador', function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
 
-Route::get('adminhome', 'HomeController@index');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Route::resource('/tipopregunta', 'TipoPreguntaController');
+Route::resource('tipopregunta', 'TipoPreguntaController');
 
 Route::resource('medico', 'MedicoController');
 

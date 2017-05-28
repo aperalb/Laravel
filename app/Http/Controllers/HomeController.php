@@ -28,12 +28,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $medico = Medico::find($user->medico_id);
-        if($medico !== null) {
+        $medico = Medico::where('user_id', Auth::user()->id)->first();
+        if(isset($medico)) {
             return view('home');
-        }else{
+        }
+        else {
             return view('adminhome');
         }
+
+
     }
 }
+

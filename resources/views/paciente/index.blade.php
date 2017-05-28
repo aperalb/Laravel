@@ -58,49 +58,20 @@
 
                                 </td>
 
-                                  <td>
-                                      {!! Form::open(['route' => ['resolucion.createupdrs',$paciente->id], 'method' => 'get']) !!}
-                                      {!! Form::submit('UPDRS', ['class'=> 'btn btn-danger' ])!!}
-                                      {!! Form::close() !!}
-
-                                  </td>
-
-                                  <td>
-                                      {!! Form::open(['route' => ['resolucion.createbarthel',$paciente->id], 'method' => 'get']) !!}
-                                      {!! Form::submit('BARTHEL', ['class'=> 'btn btn-danger' ])!!}
-                                      {!! Form::close() !!}
-
-                                  </td>
-
-                                  <td>
-                                      {!! Form::open(['route' => ['resolucion.createedc',$paciente->id], 'method' => 'get']) !!}
-                                      {!! Form::submit('EDC', ['class'=> 'btn btn-danger' ])!!}
-                                      {!! Form::close() !!}
-
-                                  </td>
-
                                 <td><div class="btn-group">
                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Más <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href={{url('/welcome')}}#">Más</a></li>
-                                            <li><a href={{url('/welcome')}}#">Ver Tratamientos</a></li>
-                                            <li><a href={{url('/welcome')}}#">Ver Resoluciones</a></li>
+                                            <li><a href={{url('createupdrs/'.$paciente->id)}}#">Crear UPDRS</a></li>
+                                            <li><a href={{url('createbarthel/'.$paciente->id)}}#">Crear BARTHEL</a></li>
+                                            <li><a href={{url('createedc/'.$paciente->id)}}#">Crear EDC</a></li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href="#">Otros</a></li>
                                         </ul>
                                     </div>
                                 </td>
-
-
-
-
-
-
-
-
-                            </tr>
+                                </tr>
                             @endforeach
                         </table>
                 </div>

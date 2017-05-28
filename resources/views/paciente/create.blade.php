@@ -30,7 +30,7 @@
 
                         <div class="form-group">
                             {!! Form::label('dni', 'DNI del paciente') !!}
-                            {!! Form::text('dni',null,['class'=>'form-control', 'required', 'pattern'=>'/^\d{8}[a-zA-Z]$/', 'autofocus']) !!}
+                            {!! Form::text('dni',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                             <br> </br>
                         </div>
 

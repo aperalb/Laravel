@@ -116,7 +116,7 @@
                                 <tr>
                                     <td>{{ $resolucion->formulario->nombre }}</td>
                                     <td>{{ $resolucion->updated_at }}</td>
-                                    <td>{{ $tratamiento->puntuacion }}</td>
+                                    <td>{{ $resolucion->puntuacion }}</td>
                                     <td>
                                         {!! Form::open(['route' => ['resolucion.edit', $resolucion->id], 'method' => 'get']) !!}
                                         {!! Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}

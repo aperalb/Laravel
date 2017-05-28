@@ -46,7 +46,7 @@
         .small-title{
             font-size: 45px;
             margin-top: 0;
-            margin-left: 21%;
+            margin-left: 35%;
 
         }
         .links > a {
@@ -88,7 +88,7 @@
 
 <div class="small-title">
     <br>
-    <i><b><font color="#80AFE5" >Unified Parkinson's Disease Rating Scale</font></b></i>
+    <i><b><font color="#80AFE5" >Fill your Survey</font></b></i>
 </div>
 
 </body>
